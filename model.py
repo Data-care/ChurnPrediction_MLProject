@@ -9,6 +9,7 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.metrics import accuracy_score
 import pickle
 
+
 df=pd.read_csv('Bank Customer Churn Prediction.csv')
 df.head()
 
