@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Churn Prediction</title>
+</head>
+<body>
+    <h1>Customer Churn Prediction</h1>
+    <form method="POST" action="/predict">
+    <h1>Enter the Information Below and find if a Customer will Churn out or not</h1>
+        <label for="credit_score">Enter the Credit Score:</label>
+        <input type="number" name="credit_score" id="credit_scoreInput"  required><br><br>
+
+    
+
+        <label for="country">Country:</label>
+        <select name="country" required>
+            <option>Select</option>
+            <option >France</option>
+            <option >Germany</option>
+            <option >Spain</option>
+        </select><br><br>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" required>
+            <option>Select</option>
+            <option >Female</option>
+            <option >Male</option>
+        </select><br><br>
+
+        <label for="age">Enter Age:</label>
+        <input type="number" name="age" id="ageInput"  required><br><br>
+
+        <label for="tenure">Tenure (No.of Years):</label>
+        <input type="number" id="tenureInput" name="tenure" min="0" max="10"  required><br><br>
+
+        <label for="balance">Enter the Account Balance:</label>
+        <input type="number" name="balance" step="0.01" id="balanceInput"  required><br><br>
+
+        <label for="products_number">Number of Products used:</label>
+        <input type="number" id="products_numberInput" name="products_number" min="1" max="4" ><br><br>
+
+        <label for="credit_card">Do the Customer have a credit Card? (1=Yes, 0=No):</label>
+        <select name="credit_card" required>
+            <option type="text">Select</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label for="active_member">Is the Customer an active Member ?(1=Yes, 0=No):</label>
+        <select name="active_member" required>
+            <option type="text">Select</option>
+
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label for="estimated_salary">Enter the estimated Salary:</label>
+        <input type="number" name="estimated_salary" step="0.01" id="estimated_salaryInput"  required><br><br>
+        <input type="submit" value="Predict whether the Customer will leave the bank or not?">
+        
+    </form>
+
+    {% if result %}
+        <div class="result-container">
+            <p class="result">{{ result }}</p>
+        </div>
+    {% endif %}
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+
+
+    <style>
+    
+    body {
+    font-family: sans-serif;
+    background-image: url(https://wallpapercave.com/dwp1x/wp4316550.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100%!important;
+    }
+
+
+    form h1 {
+    font-size: 18px;
+    background:rgb(177, 177, 248) none repeat scroll 0% 0%;
+    color: rgb(23, 17, 17);
+    padding: 20px 22px;
+    border-radius: 5px 5px 0px 0px;
+    margin: auto;
+    text-shadow: none; 
+    text-align:left;
+    border-radius: 5px;
+    }
+
+    form {
+    border-radius: 5px;
+    max-width:700px;
+    width:100%;
+    margin: 5% auto;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    }
+    p{
+        color: #f0f6f0;
+        text-align: center;
+        font-size: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+
+    h1 {
+    font-size: 50px;
+    text-align:center; 
+    color: #14056b;
+    margin:50px 0px 0px 0px
+    }
+
+    input {
+            color: rgb(14, 12, 12);
+            
+    }
+    label{
+        color: #14056b;
+        font-size: 16px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: 400;
+    }
+
+    input  [type="submit"]{
+        background-color: #0814f5; 
+        color: white;
+        padding: 10px 20px; 
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: larger;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .result {
+        font-size: 25px;
+        font-weight: bold;
+        color: #f0f6f0;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: #14056b;
+        text-align: center;
+    }
+    </style>
+
+
+</body>
+
+</html>
+
+
+
+
+      
