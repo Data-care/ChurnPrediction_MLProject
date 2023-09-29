@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import numpy as np
 
+
 app = Flask(__name__)
 
 with open('model.pkl', 'rb') as file:
